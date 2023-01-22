@@ -1,14 +1,12 @@
-import React from "react";
-import image from "./==.gif";
+import React from 'react'
 
 function App() {
   return (
     <div>
       start
-      {/* <img src={image} /> */}
-      {console.log("123", 123)}
+      {console.log('123', 123)}
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
