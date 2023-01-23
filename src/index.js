@@ -1,5 +1,5 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+import React from 'react'
+import ReactDOM from 'react-dom/client'
 // import { Provider } from 'react-redux'
 
 // import configureStore from 'Redux/store'
@@ -8,14 +8,13 @@ import ReactDOM from 'react-dom/client';
 
 // const store = configureStore()
 
-import App from './app';
+import App from './app'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <>
     {/* <Provider store={store}> */}
-      {/* <App store={store} /> */}
-      <App />
+    {/* <App store={store} /> */}
+    <App />
     {/* </Provider> */}
-    ,
   </>,
-);
+)
