@@ -1,11 +1,17 @@
 import React from 'react'
 
-function App() {
+function test() {
+  console.log('444', 444)
+}
+
+const App = () => {
+  console.log('123', 123)
+  test()
   return (
-    <div>
-      start
-      {console.log('123', 123)}
-    </div>
+    <>
+      <div>start</div>
+      <div>test</div>
+    </>
   )
 }
 
