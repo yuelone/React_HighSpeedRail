@@ -1,17 +1,19 @@
 {
-  "name": "webpackproject",
+  "name": "react-highspeedrail",
   "version": "1.0.0",
-  "description": "",
+  "description": "This is a  HighSpeedRail website.",
   "main": "index.js",
   "scripts": {
     "build": "webpack",
-    "dev": "cross-env webpack serve --config webpack/webpack.dev.config.js"
+    "dev": "cross-env webpack serve --config webpack/webpack.dev.config.js",
+    "server": "json-server --watch db.json--port 3090"
   },
-  "author": "",
+  "author": "yuelone",
   "license": "ISC",
   "dependencies": {
     "axios": "^1.2.0",
     "formik": "^2.2.9",
+    "json-server": "^0.17.1",
     "path": "^0.12.7",
     "prettier-eslint": "^15.0.1",
     "prop-types": "^15.8.1",
