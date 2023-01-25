@@ -15,6 +15,27 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
+  "globals": {
+    "IS_DEV_ENV": true,
+    "API_HOST": true
+  },
+  "settings": {
+    "import/resolver": {
+      "alias": {
+        "map": [
+          ["Constants", "./src/constants"],
+          ["ActionTypes", "./src/constants/actionTypes"],
+          ["Hooks", "./src/hooks"],
+          ["Components", "./src/components"],
+          ["Components", "./src/components"],
+          ["Pages", "./src/pages"],
+          ["Redux", "./src/redux"],
+          ["Routes", "./src/routes"],
+          ["Util", "./src/util"]
+        ]
+      }
+    }
+  },
   "plugins": ["react"],
   "rules": {
     "semi": ["error", "never"],
@@ -64,6 +85,14 @@
       {
         "devDependencies": ["**/webpack/*.js", "postcss.config.js"]
       }
-    ]
+    ],
+    "object-curly-newline": [
+      "error",
+      {
+        "ObjectExpression": "always",
+        "ObjectPattern": "never"
+      }
+    ],
+    "default-param-last": "off"
   }
 }

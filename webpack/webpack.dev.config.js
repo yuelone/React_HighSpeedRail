@@ -5,12 +5,15 @@ const CopyPlugin = require('copy-webpack-plugin')
 const webpack = require('webpack')
 const CompressionPlugin = require('compression-webpack-plugin')
 const path = require('path')
+const { merge } = require('webpack-merge')
+
+const baseConfig = require('./webpack.base.config')
 
 const HOST = 'localhost'
 const PORT = 3009
 
-module.exports = {
-  entry: ['@babel/polyfill', './src/index.js'],
+module.exports = merge(baseConfig, {
+  // entry: ['@babel/polyfill', './src/index.js'],
   mode: 'production',
   performance: {
     hints: false,
@@ -79,7 +82,12 @@ module.exports = {
       filename: 'index.[hash].css',
     }),
     new CopyPlugin({
-      patterns: [{ from: './static', to: './static' }],
+      patterns: [
+        {
+          from: './static',
+          to: './static',
+        },
+      ],
     }),
     new webpack.DefinePlugin({
       PRODUCTION: JSON.stringify(true),
@@ -87,6 +95,5 @@ module.exports = {
     new CleanWebpackPlugin(),
     new CompressionPlugin(),
   ],
-
   devtool: 'source-map',
-}
+})
