@@ -1,12 +1,16 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useDispatch } from 'react-redux'
 
-function test() {
-  console.log('444', 444)
-}
+import { getHomeMenuList } from 'Redux/actions'
+// import { homeMenuListLoading, homeMenuList } from 'Redux/selectors'
 
 const App = () => {
-  console.log('123', 123)
-  test()
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(getHomeMenuList())
+  }, [])
+
   return (
     <>
       <div>start</div>
