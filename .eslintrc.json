@@ -93,6 +93,8 @@
         "ObjectPattern": "never"
       }
     ],
-    "default-param-last": "off"
+    "default-param-last": "off",
+    "indent": "off",
+    "no-confusing-arrow": "off"
   }
 }

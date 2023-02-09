@@ -1,8 +1,56 @@
 {
-  "posts": [
+  "menu": [
     {
-      "data": [],
-      "id": "1"
+      "messageid": "0",
+      "messageDesc": "系統錯誤",
+      "content": {
+        "level1": [
+          {
+            "name": "ticket-information",
+            "parent": "root",
+            "camelCase": "ticketInformation"
+          },
+          {
+            "name": "driving-guide",
+            "parent": "root",
+            "camelCase": "drivingGuide"
+          },
+          {
+            "name": "travel-information",
+            "parent": "root",
+            "camelCase": "travelInformation"
+          },
+          {
+            "name": "about-high-speed-rail",
+            "parent": "root",
+            "camelCase": "aboutHighSpeedRail"
+          }
+        ],
+        "level2": [
+          {
+            "name": "ticket-description",
+            "parent": "ticket-information",
+            "camelCase": "ticketDescription"
+          },
+          {
+            "name": "station-information",
+            "parent": "driving-guide",
+            "camelCase": "stationInformation"
+          }
+        ],
+        "level3": [
+          {
+            "name": "list-of-fare-products",
+            "parent": "ticket-description",
+            "camelCase": "listOfFareProducts"
+          },
+          {
+            "name": "nangang-station",
+            "parent": "station-information",
+            "camelCase": "nangangStation"
+          }
+        ]
+      }
     }
   ]
 }
