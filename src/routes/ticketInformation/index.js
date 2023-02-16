@@ -1,5 +1,4 @@
 // import { lazy } from 'react'
-
 import ticketDescriptionRoutes from './ticketDescription'
 
 const currentRoute = '/ticket-information'
@@ -8,11 +7,11 @@ const currentRoute = '/ticket-information'
 const ticketInformationRoutes = [
   ...[...ticketDescriptionRoutes].map((page) => ({
     path: `${currentRoute}${page.path}`,
-    Child: page.Child,
-  })),
+    Element: page.Element
+  }))
   //   {
   //     path: currentRoute,
-  //     Child: TicketInformation,
+  //     Element: TicketInformation,
   //   },
 ]
 

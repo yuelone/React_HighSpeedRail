@@ -23,22 +23,54 @@
     "import/resolver": {
       "alias": {
         "map": [
-          ["Constants", "./src/constants"],
-          ["ActionTypes", "./src/constants/actionTypes"],
-          ["Hooks", "./src/hooks"],
-          ["Components", "./src/components"],
-          ["Components", "./src/components"],
-          ["Pages", "./src/pages"],
-          ["Redux", "./src/redux"],
-          ["Routes", "./src/routes"],
-          ["Util", "./src/util"]
+          [
+            "Constants",
+            "./src/constants"
+          ],
+          [
+            "ActionTypes",
+            "./src/constants/actionTypes"
+          ],
+          [
+            "Hooks",
+            "./src/hooks"
+          ],
+          [
+            "Components",
+            "./src/components"
+          ],
+          [
+            "Components",
+            "./src/components"
+          ],
+          [
+            "Pages",
+            "./src/pages"
+          ],
+          [
+            "Redux",
+            "./src/redux"
+          ],
+          [
+            "Routes",
+            "./src/routes"
+          ],
+          [
+            "Util",
+            "./src/util"
+          ]
         ]
       }
     }
   },
-  "plugins": ["react"],
+  "plugins": [
+    "react"
+  ],
   "rules": {
-    "semi": ["error", "never"],
+    "semi": [
+      "error",
+      "never"
+    ],
     "import/prefer-default-export": "off",
     "react/jsx-no-undef": [
       2,
@@ -49,7 +81,10 @@
     "react/jsx-filename-extension": [
       1,
       {
-        "extensions": [".js", ".jsx"]
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
       }
     ],
     "react/jsx-wrap-multilines": 0,
@@ -58,11 +93,20 @@
     "jsx-a11y/label-has-associated-control": [
       "error",
       {
-        "labelComponents": ["label"],
-        "labelAttributes": ["htmlFor"],
-        "controlComponents": ["input"],
+        "labelComponents": [
+          "label"
+        ],
+        "labelAttributes": [
+          "htmlFor"
+        ],
+        "controlComponents": [
+          "input"
+        ],
         "required": {
-          "some": ["nesting", "id"]
+          "some": [
+            "nesting",
+            "id"
+          ]
         }
       }
     ],
@@ -70,7 +114,10 @@
       "error",
       {
         "required": {
-          "some": ["nesting", "id"]
+          "some": [
+            "nesting",
+            "id"
+          ]
         }
       }
     ],
@@ -83,7 +130,10 @@
     "import/no-extraneous-dependencies": [
       "error",
       {
-        "devDependencies": ["**/webpack/*.js", "postcss.config.js"]
+        "devDependencies": [
+          "**/webpack/*.js",
+          "postcss.config.js"
+        ]
       }
     ],
     "object-curly-newline": [
@@ -95,6 +145,9 @@
     ],
     "default-param-last": "off",
     "indent": "off",
-    "no-confusing-arrow": "off"
+    "no-confusing-arrow": "off",
+    "implicit-arrow-linebreak": "off",
+    "comma-dangle": "off",
+    "function-paren-newline": "off"
   }
 }
