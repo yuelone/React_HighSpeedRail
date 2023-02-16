@@ -3,8 +3,9 @@ const path = require('path')
 
 const API_HOST = (() => {
   switch (process.env.HOST) {
-    // local
     case 'local':
+      return JSON.stringify('http://localhost:3090/')
+    case 'prod':
       return JSON.stringify('http://localhost:3009/')
     default:
       return JSON.stringify('http://localhost:3009/')

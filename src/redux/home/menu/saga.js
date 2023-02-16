@@ -2,30 +2,21 @@ import { all, put, takeLatest, call } from 'redux-saga/effects'
 import axios from 'Util/noAuth'
 import { GET_HOME_MENU_LIST } from 'ActionTypes'
 import { getHomeMenuListSuccess, getHomeMenuListFailure } from 'Redux/actions'
-
-const FAKE_HOME_MENU_LIST_DATA = {
-  messageid: '0',
-  messageDesc: '系統錯誤',
-  content: {
-    userAcct: '53778',
-    userName: '林OO',
-    lastLoginTime: '2022/02/16 11:02:56',
-    lastErrorTime: '2022/02/16 10:36:49',
-    todoListCnt: '45',
-  },
-}
+import FAKE_HOME_MENU_LIST_DATA from '../../../../db.json'
 
 function getHomeMenuListApi() {
-  return IS_DEV_ENV ? FAKE_HOME_MENU_LIST_DATA : axios.get('/test/test').then((res) => res.data)
+  return IS_DEV_ENV ? FAKE_HOME_MENU_LIST_DATA : axios.get('menu').then((res) => res.data)
 }
 
 function* getHomeMenuListSaga() {
   try {
     const response = yield call(getHomeMenuListApi)
 
-    if (response.messageid !== '0') throw response
+    if (IS_DEV_ENV) {
+      if (response.menu[0].messageid !== '0') throw response
+    } else if (response[0].messageid !== '0') throw response
 
-    const resultData = response.content
+    const resultData = IS_DEV_ENV ? response.menu[0].content : response[0].content
 
     console.table(resultData)
 
@@ -33,7 +24,13 @@ function* getHomeMenuListSaga() {
   } catch (err) {
     console.error(err)
     const errorMessage = {
-      message: err.messageid !== '0' ? err.messageDesc : '',
+      message: IS_DEV_ENV
+        ? err.menu[0].messageid !== '0'
+          ? err.menu[0].messageDesc
+          : ''
+        : err[0].messageid !== '0'
+        ? err[0].messageDesc
+        : '',
     }
     yield put(getHomeMenuListFailure(errorMessage))
   }
