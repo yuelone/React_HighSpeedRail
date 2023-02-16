@@ -1,17 +1,17 @@
+/* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable object-curly-newline */
 import { applyMiddleware, createStore } from 'redux'
 import createSagaMiddleware from 'redux-saga'
-
 import createReducer from 'Redux/reducers'
 import rootSaga from 'Redux/sagas'
-
+import { composeWithDevTools } from 'remote-redux-devtools'
 import logger from 'redux-logger'
 
 const bindMiddleware = (middleware) => {
   // if (process.env.NODE_ENV !== 'production') {
   if (process.env.NODE_ENV === 'production') {
     middleware.push(logger)
-    return applyMiddleware(...middleware)
+    return composeWithDevTools(applyMiddleware(...middleware))
   }
   return applyMiddleware(...middleware)
 }
